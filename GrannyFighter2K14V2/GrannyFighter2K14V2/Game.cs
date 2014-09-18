@@ -21,7 +21,7 @@ namespace GrannyFighter2K14V2
         {
             //Player HUD showing current accuracy, poison damage per turn, and HP.
             Console.WriteLine("\n\n\n\n\n____________________________________________________________________________________________");
-            Console.WriteLine("Health Meter : " + Player.HP + " / 100" + "                                          " + "Boss Health : " + Enemy.HP + " / 200");
+            Console.WriteLine("Health Meter : " + Player.HP + " / 100" + "                                          " + "Boss Health : " + Enemy.HP + " / 150");
             Console.WriteLine("                             Current mainhand accuracy : " + Player.Accuracy + "%");
             Console.WriteLine("                                  Loofahs remaining : " + Player.Loofahs);
 
@@ -34,7 +34,7 @@ namespace GrannyFighter2K14V2
         }
         public void PlayGame()
         {
-            this.Enemy = new Enemy("Mavis", 200);
+            this.Enemy = new Enemy("Mavis", 150);
             this.Player = new Player("Dan", 100);
 
             while (this.Player.IsAlive && this.Enemy.IsAlive)
@@ -44,8 +44,10 @@ namespace GrannyFighter2K14V2
                 this.Player.DoAttack(Enemy);
                 this.Enemy.DoAttack(Player);
 
+                
                 if (!this.Player.IsAlive)
                 {
+                    Console.Clear();
                     Console.WriteLine(@" _____   ___  ___  ___ _____   _____  _   _ ___________ 
 |  __ \ / _ \ |  \/  ||  ___| |  _  || | | |  ___| ___ \
 | |  \// /_\ \| .  . || |__   | | | || | | | |__ | |_/ /
@@ -67,6 +69,7 @@ namespace GrannyFighter2K14V2
                 }
                 if (!this.Enemy.IsAlive)
                 {
+                    Console.Clear();
                     Console.WriteLine("You won. K.");
                     Console.WriteLine("\n\n");
                     Console.WriteLine(@" _____ _                 _           __                   _             _             _ 
@@ -79,6 +82,7 @@ namespace GrannyFighter2K14V2
                                                    |_|            |___/         |___/   ");
         
                 }
+
 
             }
         }

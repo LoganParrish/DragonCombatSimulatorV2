@@ -29,18 +29,20 @@ namespace GrannyFighter2K14V2
         {
             Random rng = new Random();
 
-            if (rng.Next(0, 15) == 1)
-            {
-                Console.WriteLine("Mavis lets her cougar advances overcome her, and touches you with her pruny hands. Your accuracy is lowered by 10%.");
-                Player.Accuracy -= 10;
-            }
+            
             //insulin poisoning
 
             if (this.PoisonCount > 0)
             {
                 Player.HP -= PoisonCount;
             }
-            if (rng.Next(0, 21) == 20)
+           
+            if (rng.Next(0, 15) == 1)
+            {
+                Console.WriteLine("Mavis lets her cougar advances overcome her, and touches you with her pruny hands. Your accuracy is lowered by 10%.");
+                Player.Accuracy -= 10;
+            }
+            else if (rng.Next(0, 21) == 20)
             {
                 Console.WriteLine(@"Instead of hitting you, Mavis stabs you with her insulin needle. 
 You will take 5 damage every turn for each time she stabs you!");

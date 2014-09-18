@@ -99,7 +99,8 @@ namespace GrannyFighter2K14V2
                     break;
                 case AttackType.Heal:
 
-                    if (rng.Next(0, 16) == 15)
+                    if (rng.Next(0, 21
+                        ) == 15)
                     {
                         Console.Clear();
                         Console.WriteLine(@"The pill you take was actually freebase cocaine smuggled in by the Mexican Drug Cartel!
@@ -114,6 +115,10 @@ You gain an immediate 100 health boost and gain immunity to an extra pill.");
                         damage = rng.Next(10, 41);
                         this.HP += damage;
                         Console.WriteLine("You pop some pills and heal yourself for " + damage + " health... careful not to OD.");
+                    }
+                    if (Healing == 5)
+                    {
+                        this.HP = 0;
                     }
                 
                 //if user inputs a number that the system does not recognize
