@@ -16,10 +16,15 @@ namespace GrannyFighter2K14V2
             Intro();
             Game game = new Game();
             game.PlayGame();
+            if (!game.Enemy.IsAlive)
+            {
+                AddHighScore(game.Player.SlapCount);
+                DisplayHighScore();
+            }
             Console.ReadKey();
 
         }
-        static void  GrannyFighter()
+        static void GrannyFighter()
         {
             Console.WriteLine(@" _____ ______  ___   _   _  _   ___   __ ______ _____ _____  _   _ _____ ___________   _____  _   __ __    ___ 
 |  __ \| ___ \/ _ \ | \ | || \ | \ \ / / |  ___|_   _|  __ \| | | |_   _|  ___| ___ \ / __  \| | / //  |  /   |
@@ -53,6 +58,40 @@ Press any key to continue...
 ");
             Console.ReadKey();
             Console.Clear();
+        }
+        static void AddHighScore(int playerScore)
+        {
+            Console.WriteLine("\n\nAdd your name to the highscores: ");
+            string playerName = Console.ReadLine();
+
+            LoganEntities db = new LoganEntities();
+
+            HighScore newHighScore = new HighScore();
+            newHighScore.Date = DateTime.Now;
+            newHighScore.Name = playerName;
+            newHighScore.Game = "GrannyFighter2K14.V.2";
+            newHighScore.Score = playerScore;
+
+            db.HighScores.Add(newHighScore);
+
+            db.SaveChanges();
+        }
+        static void DisplayHighScore()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("==================== HIGH SCORES ====================");
+            Console.WriteLine("=====================================================\n\n");
+            Console.ResetColor();
+
+            LoganEntities db = new LoganEntities();
+            List<HighScore> highScoreList = db.HighScores.Where(x => x.Game == "GrannyFighter2K14.V.2").OrderByDescending(x => x.Score).Take(10).ToList();
+
+            foreach (HighScore highScore in highScoreList)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("{0}. {1} - Only {2} spanks to put that lady in her place - {3}", highScoreList.IndexOf(highScore) + 1, highScore.Name, highScore.Score, highScore.Date.Value.ToShortDateString());
+                Console.ResetColor();
+            }
         }
     }
 }

@@ -80,6 +80,10 @@ namespace GrannyFighter2K14V2
   \_/ |_| |_|\__,_|_| |_|_|\_\___/ |_| \___/|_|    | .__/|_|\__,_|\__, |_|_| |_|\__, (_)
                                                    | |             __/ |         __/ |  
                                                    |_|            |___/         |___/   ");
+
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
+                    Console.Clear();
         
                 }
 

@@ -15,6 +15,7 @@ namespace GrannyFighter2K14V2
         public int Accuracy { get; set; }
         public int Loofahs { get; set; }
         public int Healing { get; set; }
+        public int SlapCount { get; set; }
         int damage = 0;
         public bool IsAlive
         {
@@ -29,6 +30,7 @@ namespace GrannyFighter2K14V2
             this.Loofahs = 3;
             this.Accuracy = 70;
             this.Healing = 0;
+            this.SlapCount = 0;
             this.HP = HP;
         }
         public int DoAttack(Enemy Enemy)
@@ -51,6 +53,7 @@ namespace GrannyFighter2K14V2
                         Console.Clear();
                         damage = rng.Next(20, 33) * 2;
                         Console.WriteLine("You landed a *CRIT* and dealt " + damage + " damage!!!");
+                        SlapCount++;
                         Enemy.HP -= damage;
 
                     }
@@ -59,6 +62,7 @@ namespace GrannyFighter2K14V2
                         Console.Clear();
                         damage = Convert.ToInt32(rng.Next(20, 33) * 1.2);
                         Console.WriteLine("You landed a *MINI CRIT* and dealt " + damage + " damage!!!");
+                        SlapCount++;
                         Enemy.HP -= damage;
                     }
                     else
@@ -68,6 +72,7 @@ namespace GrannyFighter2K14V2
                             damage = rng.Next(18, 33);
                             Console.Clear();
                             Console.WriteLine("You hit Mavis square on the butt and deal " + damage + " damage.");
+                            SlapCount++;
                             Enemy.HP -= damage;
                         }
                         else
@@ -99,8 +104,7 @@ namespace GrannyFighter2K14V2
                     break;
                 case AttackType.Heal:
 
-                    if (rng.Next(0, 21
-                        ) == 15)
+                    if (rng.Next(0, 21) == 15)
                     {
                         Console.Clear();
                         Console.WriteLine(@"The pill you take was actually freebase cocaine smuggled in by the Mexican Drug Cartel!
