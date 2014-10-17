@@ -64,10 +64,10 @@ Press any key to continue...
             Console.WriteLine("\n\nAdd your name to the highscores: ");
             string playerName = Console.ReadLine();
 
-            LoganEntities db = new LoganEntities();
+            LoganEntities1 db = new LoganEntities1();
 
             HighScore newHighScore = new HighScore();
-            newHighScore.Date = DateTime.Now;
+            newHighScore.DateCreated = DateTime.Now;
             newHighScore.Name = playerName;
             newHighScore.Game = "GrannyFighter2K14.V.2";
             newHighScore.Score = playerScore;
@@ -83,13 +83,13 @@ Press any key to continue...
             Console.WriteLine("=====================================================\n\n");
             Console.ResetColor();
 
-            LoganEntities db = new LoganEntities();
+            LoganEntities1 db = new LoganEntities1();
             List<HighScore> highScoreList = db.HighScores.Where(x => x.Game == "GrannyFighter2K14.V.2").OrderByDescending(x => x.Score).Take(10).ToList();
 
             foreach (HighScore highScore in highScoreList)
             {
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("{0}. {1} - Only {2} spanks to put that lady in her place - {3}", highScoreList.IndexOf(highScore) + 1, highScore.Name, highScore.Score, highScore.Date.Value.ToShortDateString());
+                Console.WriteLine("{0}. {1} - Only {2} spanks to put that lady in her place - {3}", highScoreList.IndexOf(highScore) + 1, highScore.Name, highScore.Score, highScore.DateCreated.Value.ToShortDateString());
                 Console.ResetColor();
             }
         }
