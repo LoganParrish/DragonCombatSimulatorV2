@@ -44,7 +44,11 @@ namespace GrannyFighter2K14V2
             //handy conditional counter if you're poisoned
             if (Enemy.PoisonCount > 0)
             {
-                Console.WriteLine("              \n               ================ Poison Damage Per Turn: " + Enemy.PoisonCount + "================");
+                Console.Write("              \n               ================ Poison Damage Per Turn: ");
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Write(Enemy.PoisonCount);
+                Console.ResetColor();
+                Console.WriteLine(" ================");
             }
             
         }
@@ -76,14 +80,21 @@ namespace GrannyFighter2K14V2
                 else if (!this.Player.IsAlive)
                 {
                     Console.Clear();
-                    Console.WriteLine("An old lady just beat your sorry behind.");
+                    Console.WriteLine("Oh dear, you're dead! \n\n\n");
+                    Console.WriteLine(@"Mavis takes back all of her drugs and picks up the scattered loofahs. She removes one of the tennis balls from her walker and shoves
+it into your lifeless mouth." + "\n\n\n\n\n\n");
+                    Console.WriteLine("\n\n\n");
                     GameOver();
                     Console.ReadKey();
                 }
                 if (!this.Enemy.IsAlive)
                 {
                     Console.Clear();
-                    Console.WriteLine("Awesome job. You beat up a senior citizen.");
+                    Console.Write("Your health remaining was: ");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine(this.Player.HP + "\n\n\n\n\n\n\n\n");
+                    Console.ResetColor();
+                    Console.WriteLine("You managed to obliterate Mavis! Serves her right for smelling like cough drops and unwashed wrinkle folds." + "\n\n\n\n\n\n");
                     Console.WriteLine("\n\n");
                     Console.WriteLine(@" _____ _                 _           __                   _             _             _ 
 |_   _| |               | |         / _|                 | |           (_)           | |
@@ -122,6 +133,17 @@ namespace GrannyFighter2K14V2
   \_/ |_| |_|\__,_|_| |_|_|\_\___/ |_| \___/|_|    | .__/|_|\__,_|\__, |_|_| |_|\__, (_)
                                                    | |             __/ |         __/ |  
                                                    |_|            |___/         |___/   ");
+        }
+        static void Jesus()
+        {
+            Console.WriteLine(@"   ___   _____   _____   _   _   _____        __   __  _____   _   _      _    _   _____   _   _ ___  
+  |_  | |  ___| /  ___| | | | | /  ___|       \ \ / / |  _  | | | | |    | |  | | |  _  | | \ | |__ \ 
+    | | | |__   \ `--.  | | | | \ `--.         \ V /  | | | | | | | |    | |  | | | | | | |  \| |  ) |
+    | | |  __|   `--. \ | | | |  `--. \         \ /   | | | | | | | |    | |/\| | | | | | | . ` | / / 
+/\__/ / | |___  /\__/ / | |_| | /\__/ /  _      | |   \ \_/ / | |_| |    \  /\  / \ \_/ / | |\  ||_|  
+\____/  \____/  \____/   \___/  \____/  ( )     \_/    \___/   \___/      \/  \/   \___/  \_| \_/(_)  
+                                        |/                                                            
+                                                                                                      ");
         }
         
     }

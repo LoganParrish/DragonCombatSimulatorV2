@@ -39,13 +39,18 @@ namespace GrannyFighter2K14V2
            
             if (rng.Next(0, 15) == 1)
             {
-                Console.WriteLine("Mavis lets her cougar advances overcome her, and touches you with her pruny hands. Your accuracy is lowered by 10%.");
+                Console.Write("Mavis lets her cougar advances overcome her, and touches you with her pruny hands. Your accuracy is lowered by ");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("10%.");
+                Console.ResetColor();
                 Player.Accuracy -= 10;
             }
             else if (rng.Next(0, 21) == 20)
             {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine(@"Instead of hitting you, Mavis stabs you with her insulin needle. 
 You will take 5 damage every turn for each time she stabs you!");
+                Console.ResetColor();
                 this.PoisonCount += 5;
             }
             //regular hit

@@ -39,12 +39,9 @@ namespace GrannyFighter2K14V2
             Random rng = new Random();
             string attack = Console.ReadLine();
 
+                
 
-            
-
-                int trueAttack = int.Parse(attack);
-
-                if (trueAttack != 1 && trueAttack != 2 && trueAttack != 3)
+                if (attack != "1" && attack != "2" && attack != "3")
                 {
                     Console.Clear();
                     Console.WriteLine("Use an actual attack, you pleb. Is Mavis' senility rubbing off on you? Mavis gets a free shot.");
@@ -53,6 +50,7 @@ namespace GrannyFighter2K14V2
                 else
                 {
 
+                int trueAttack = int.Parse(attack);
                 var Type = (AttackType)trueAttack;
 
                 
