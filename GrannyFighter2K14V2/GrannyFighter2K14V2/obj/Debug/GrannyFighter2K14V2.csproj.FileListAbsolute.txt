@@ -6,3 +6,11 @@ C:\Users\Technologist\Documents\GitHub\DragonCombatSimulatorV2\GrannyFighter2K14
 C:\Users\Technologist\Documents\GitHub\DragonCombatSimulatorV2\GrannyFighter2K14V2\GrannyFighter2K14V2\obj\Debug\GrannyFighter2K14V2.pdb
 C:\Users\Technologist\Documents\GitHub\DragonCombatSimulatorV2\GrannyFighter2K14V2\GrannyFighter2K14V2\bin\Debug\EntityFramework.dll
 C:\Users\Technologist\Documents\GitHub\DragonCombatSimulatorV2\GrannyFighter2K14V2\GrannyFighter2K14V2\bin\Debug\EntityFramework.xml
+C:\Users\Logan\Documents\GitHub\DragonCombatSimulatorV2\GrannyFighter2K14V2\GrannyFighter2K14V2\bin\Debug\GrannyFighter2K14V2.exe.config
+C:\Users\Logan\Documents\GitHub\DragonCombatSimulatorV2\GrannyFighter2K14V2\GrannyFighter2K14V2\obj\Debug\GrannyFighter2K14V2.exe
+C:\Users\Logan\Documents\GitHub\DragonCombatSimulatorV2\GrannyFighter2K14V2\GrannyFighter2K14V2\obj\Debug\GrannyFighter2K14V2.pdb
+C:\Users\Logan\Documents\GitHub\DragonCombatSimulatorV2\GrannyFighter2K14V2\GrannyFighter2K14V2\bin\Debug\GrannyFighter2K14V2.exe
+C:\Users\Logan\Documents\GitHub\DragonCombatSimulatorV2\GrannyFighter2K14V2\GrannyFighter2K14V2\bin\Debug\GrannyFighter2K14V2.pdb
+C:\Users\Logan\Documents\GitHub\DragonCombatSimulatorV2\GrannyFighter2K14V2\GrannyFighter2K14V2\bin\Debug\EntityFramework.dll
+C:\Users\Logan\Documents\GitHub\DragonCombatSimulatorV2\GrannyFighter2K14V2\GrannyFighter2K14V2\bin\Debug\EntityFramework.xml
+C:\Users\Logan\Documents\GitHub\DragonCombatSimulatorV2\GrannyFighter2K14V2\GrannyFighter2K14V2\obj\Debug\GrannyFighter2K14V2.csprojResolveAssemblyReference.cache
