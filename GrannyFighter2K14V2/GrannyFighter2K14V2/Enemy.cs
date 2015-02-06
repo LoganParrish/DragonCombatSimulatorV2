@@ -51,13 +51,14 @@ You will take 5 damage every turn for each time she stabs you!");
             //regular hit
             else if (rng.Next(0, 101) < 80)
             {
-                damage = rng.Next(10, 38);
+                damage = rng.Next(10, 25);
                 Console.WriteLine("Mavis hits you for " + damage + " damage. She hits like a girl.");
             }
             //she misses
             else
             {
                 Console.WriteLine("Mavis' cataracts sets in, and she misses you.");
+                damage = 0;
             }
             Player.HP -= damage;
             return 0;

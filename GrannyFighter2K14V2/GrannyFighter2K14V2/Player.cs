@@ -40,20 +40,22 @@ namespace GrannyFighter2K14V2
             string attack = Console.ReadLine();
 
 
-            if (attack != "1" || attack != "2" || attack != "3")
-            {
-                Console.Clear();
-                Console.WriteLine("Use an actual attack, you pleb. Is Mavis' senility rubbing off on you? Mavis gets a free shot.");
-                return 0;
-            }
-            else
-            {
+            
 
                 int trueAttack = int.Parse(attack);
 
+                if (trueAttack != 1 && trueAttack != 2 && trueAttack != 3)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Use an actual attack, you pleb. Is Mavis' senility rubbing off on you? Mavis gets a free shot.");
+                    return 0;
+                }
+                else
+                {
+
                 var Type = (AttackType)trueAttack;
 
-
+                
 
                 switch (Type)
                 {
@@ -64,7 +66,11 @@ namespace GrannyFighter2K14V2
                         {
                             Console.Clear();
                             damage = rng.Next(20, 33) * 2;
-                            Console.WriteLine("You landed a *CRIT* and dealt " + damage + " damage!!!");
+                            Console.Write("You landed a ");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write("*CRIT*");
+                            Console.ResetColor();
+                            Console.WriteLine(" and dealt " + damage + " damage!!!");
                             SlapCount++;
                             Enemy.HP -= damage;
 
@@ -73,7 +79,11 @@ namespace GrannyFighter2K14V2
                         {
                             Console.Clear();
                             damage = Convert.ToInt32(rng.Next(20, 33) * 1.2);
-                            Console.WriteLine("You landed a *MINI CRIT* and dealt " + damage + " damage!!!");
+                            Console.Write("You landed a ");
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.Write("*MINI CRIT*");
+                            Console.ResetColor();
+                            Console.WriteLine(" and dealt " + damage + " damage!!!");
                             SlapCount++;
                             Enemy.HP -= damage;
                         }
