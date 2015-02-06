@@ -65,7 +65,7 @@ namespace GrannyFighter2K14V2
                 this.Enemy.DoAttack(Player);
 
 
-                if (!this.Player.IsAlive && !this.Enemy.IsAlive)
+                if (this.Player.HP < 1 && this.Enemy.HP < 1)
                 {
                     Console.WriteLine("Even though you both managed to kill eachother, there has been no major loss to society and neither of you will be remembered.");
                 }
@@ -116,6 +116,7 @@ it into your lifeless mouth." + "\n\n\n\n\n\n");
         }
         public void GameOver()
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(@" _____   ___  ___  ___ _____   _____  _   _ ___________ 
 |  __ \ / _ \ |  \/  ||  ___| |  _  || | | |  ___| ___ \
 | |  \// /_\ \| .  . || |__   | | | || | | | |__ | |_/ /
@@ -124,6 +125,7 @@ it into your lifeless mouth." + "\n\n\n\n\n\n");
  \____/\_| |_/\_|  |_/\____/   \___/  \___/\____/\_| \_|
                                                         
                                                         ");
+            Console.ResetColor();
             Console.WriteLine("\n\n");
             Console.WriteLine(@" _____ _                 _           __                   _             _             _ 
 |_   _| |               | |         / _|                 | |           (_)           | |
